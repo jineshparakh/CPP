@@ -1,6 +1,6 @@
 
 Sr.No. | Topic | Code |
-| --- | --- | --- |
+| --- | --- | --- | 
 1| Types of Variables | [Code Link](/OOP/typesOfVariables.cpp)
 2| General idea about functions | [Code Link](/OOP/functions.cpp)
 3| Default Paramaters | [Code Link](/OOP/defaultParamaters.cpp)
