@@ -3,8 +3,7 @@
 #include <iterator>
 #include <numeric>
 
-int main()
-{
+int main() {
 
     std::array<int, 10> arr;
     // same as int arr[10];

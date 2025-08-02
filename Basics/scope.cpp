@@ -1,7 +1,6 @@
 #include <iostream>
 
-int main()
-{
+int main() {
 
     // Everything in C++ is bound to {} scope (except globals).
     // x defined in {} is not accessible outside the scope.

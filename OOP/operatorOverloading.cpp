@@ -20,7 +20,11 @@ public:
 	void setData(int x, int y) {
 		this->x = x, this->y = y;
 	}
-	Complex operator +(Complex &c) {
+
+	// First const tells us that c will not be modified
+	// Second const tells us that this.x, this.y will
+	// also not be modified
+	Complex operator +(const Complex& c) const {
 		Complex temp;
 		temp.x = x + c.x;
 		temp.y = y + c.y;
@@ -40,12 +44,16 @@ public:
 		temp.y = ++this->y;
 		return temp;
 	}
+
+	bool operator==(const Complex& c) const {
+		return (this->x == c.x && this->y == c.y);
+	}
 	/*
-	    Overloading post-increment operator
-	    Why int is present as an argument?
-	    --> This is done to help the compiler differentiate between pre and post increment operators after
-	        being overloaded
-	    --> Only 'int' should be written. Nothing else is acceptable (Else, this error occurs: no ‘operator++(int)’ declared for postfix ‘++’);
+		Overloading post-increment operator
+		Why int is present as an argument?
+		--> This is done to help the compiler differentiate between pre and post increment operators after
+			being overloaded
+		--> Only 'int' should be written. Nothing else is acceptable (Else, this error occurs: no ‘operator++(int)’ declared for postfix ‘++’);
 	*/
 	Complex operator ++(int) {
 		Complex temp;
@@ -77,14 +85,14 @@ public:
 };
 int main() {
 	/*
-	    Operator Overloading:
-	        --> When an operator is overloaded with multiple jobs, it is known as operator overloading
-	        --> Way to implement compile time polymorphism
-	    You cannot overload:
-	    . (dot)
-	    ::
-	    ?:
-	    sizeof
+		Operator Overloading:
+			--> When an operator is overloaded with multiple jobs, it is known as operator overloading
+			--> Way to implement compile time polymorphism
+		You cannot overload:
+		. (dot)
+		::
+		?:
+		sizeof
 
 	*/
 	Complex c1(2, 3), c2(3, 4), c3, c4, c5, c6, c7, c8;
@@ -115,4 +123,7 @@ int main() {
 	// Complex c9;
 	// c9 >> cin;
 	// c9 << cout;
+
+	cout << "(c2 == c8): " << (c2 == c8) << endl;
+
 }

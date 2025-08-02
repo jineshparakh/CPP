@@ -5,7 +5,7 @@ int findSum(int&, int&);
 int main() {
 
 	/*
-	    When formal arguments are reference variables it is call by reference
+		When formal arguments are reference variables it is call by reference
 	*/
 
 	int a = 2, b = 3;
@@ -13,6 +13,6 @@ int main() {
 	cout << "Sum of " << a << " and " << b << " is: " << sum << endl;
 }
 // x and y are formal arguments and reference variables in this case. (Hence, call by reference)
-int findSum(int &x, int &y) { //
+int findSum(int& x, int& y) { //
 	return x + y;
 }

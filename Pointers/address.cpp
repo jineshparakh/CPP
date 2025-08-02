@@ -1,13 +1,11 @@
 #include <iostream>
 
-int main()
-{
+int main() {
     int a = 1;
     float b = 3.14;
     char c = 'c';
     signed char d = 'd';
     unsigned char e = 'e';
-    int& x = a;
 
     // Prints hex address
     std::cout << "&a: " << &a << std::endl;
@@ -30,6 +28,18 @@ int main()
 
     // function address
     std::cout << "(void*)&main: " << (void*)&main << std::endl;
+
+    // references
+
+    int x = 42;
+
+    // int& is the data type for reference
+    int& ref = x;
+
+    std::cout << "x: " << x << std::endl; // 42
+    std::cout << "&x: " << &x << std::endl;
+    std::cout << "ref: " << ref << std::endl; // 42
+    std::cout << "&ref: " << &ref << std::endl;
 
     return 0;
 }

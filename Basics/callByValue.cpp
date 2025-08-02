@@ -5,7 +5,7 @@ int findSum(int, int);
 int main() {
 
 	/*
-	    When formal arguments are ordinary variables it is call by value
+		When formal arguments are ordinary variables it is call by value
 	*/
 
 	int a = 2, b = 3;
