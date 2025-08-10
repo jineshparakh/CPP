@@ -46,18 +46,16 @@ public:
 };
 int main() {
 	/*
-	    Class type to another class type can be implemented using:
-	        1. conversion through constructor
-	        2. conversion through casting operator
-
-
+		Class type to another class type can be implemented using:
+			1. conversion through constructor
+			2. conversion through casting operator
 	*/
 	Point p1;
 	p1.setData(3, 4);
 	Complex c1;
 	/*
-	    Constructor should be made in Complex class
-	    Casting operator should be written in Point clas
+		Constructor should be made in Complex class
+		Casting operator should be written in Point clas
 	*/
 	c1 = p1;
 	c1.getData();

@@ -16,19 +16,19 @@ public:
 		cout << "The coordinates of point are: (" << x << ", " << y << ")" << endl;
 
 	}
-    // casting operator
+	// casting operator
 	operator int() {
 		return sqrt(x * x + y * y);
 	}
 };
 int main() {
 	/*
-	    Class type to primitive type can be  implemented using casting operator
-	    Syntax:
-	        operator type(){
-	            ...
-	            return (type-data);
-	        }
+		Class type to primitive type can be  implemented using casting operator
+		Syntax:
+			operator type(){
+				...
+				return (type-data);
+			}
 
 	*/
 	Point p1;
