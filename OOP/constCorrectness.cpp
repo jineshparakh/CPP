@@ -42,12 +42,44 @@ public:
     }
 };
 
+// Say UDT2 only allows update on x
+class UDT2 {
+private:
+    mutable int x;
+    int y;
+
+public:
+    UDT2(int x, int y): x(x), y(y) {
+    }
+
+    /*
+        --> const towards the tail protects us from
+            mutating any value.
+        --> mutable keyword associated with x helps
+                us mutate x inside updateX.
+        --> mutable overrides const
+        --> y cannot be changed here
+    */
+    void updateX(int newX) const {
+        x = newX;
+        // y = newX; // expression must be a modifiable lvalueC/C++(137)
+    }
+
+    void print() {
+        std::cout << "x: " << x << ", y: " << y << std::endl;
+    }
+};
+
 int main() {
 
     UDT u;
     u.setData(100);
     std::cout << u.getData() << std::endl;
 
+    UDT2 u2(10, 20);
+    u2.print();
+    u2.updateX(20);
+    u2.print();
 
     return 0;
 }
