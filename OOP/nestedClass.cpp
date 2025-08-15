@@ -4,6 +4,9 @@ using namespace std;
 class Student {
 	int rollNo;
 	string name;
+
+	// to be done when you required Address to not be used
+	// without Student
 	class Address {
 		int houseNo;
 		string apartment;
@@ -40,9 +43,8 @@ public:
 
 int main() {
 	/*
-	    --> A class inside a class is called nested class.
-	    --> A nested class is a member and as such has the same access rights as other members
-	    -->
+		--> A class inside a class is called nested class.
+		--> A nested class is a member and as such has the same access rights as other members
 	*/
 	Student s1;
 	s1.setData(1, "Jinesh", 22, "HouseApartments", 113111, "Maharashtra");
