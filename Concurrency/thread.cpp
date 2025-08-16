@@ -29,6 +29,26 @@ int main() {
         --> Every thread has its own stack pointer, program counter,
             data registers, condition codes
 
+        Join:
+        --> Once a thread is started we wait for this thread to finish
+            by calling join() on the thread object
+        --> Double join leads to program termination
+        --> We can check if the thread is joinable before joining by
+            using the joinable() function
+
+        Detach:
+        --> This is used to detach a thread from its parent thread
+        --> Double detach leads to program termination
+        --> If we have detached a thread and main function is returning
+            then the detached thread execution is suspended.
+
+        IMP:
+        Either join() or detach() should be called for the thread
+        object otherwise thread's destructor will terminate the program.
+        Why?
+            --> thread's destructor checks if the thread is still joinable
+                and if the answer is yes, it will terminate the program.
+
     */
 
     // Create a new thread and pass function arguments
@@ -38,7 +58,8 @@ int main() {
         Join with the main thread
         "Hey main thread, wait till myThread finishes before executing further"
     */
-    myThread.join();
+    if (myThread.joinable())
+        myThread.join();
 
     // Continue main thread execution
     std::cout << "Hello from main thread" << std::endl;
@@ -51,7 +72,8 @@ int main() {
     };
 
     std::thread myThread2(lambda, 200);
-    myThread2.join();
+    if (myThread2.joinable())
+        myThread2.join();
 
 
     // launching multiple threads
@@ -66,7 +88,8 @@ int main() {
     }
 
     for (int i = 0; i < 5; i++) {
-        threads[i].join();
+        if (threads[i].joinable())
+            threads[i].join();
     }
 
     return 0;
