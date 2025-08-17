@@ -13,6 +13,13 @@ static int c = 0;
 
 void counter() {
     // RAII
+    /*
+        --> lock_guard is a light weight wrapper for owning
+            mutex on a scoped basis
+        --> lock is acquired the moment lock_guard object is created
+        --> RAII semantics. Cannot explicitly unlock
+        --> No copy constructor. Cannot copy
+    */
     std::lock_guard<std::mutex> lk(gLock);
     c++;
 

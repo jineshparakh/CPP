@@ -6,6 +6,24 @@
 
 int main() {
 
+    /*
+        Condition variables are used for two reasons:
+        1. Notify other threads
+        2. Waiting for some conditions
+
+        Condition variable allows running threads to wait on some
+        conditions and once those conditions are met the waiting thread
+        is notified using:
+        a. notify_one()
+        b. notify_all()
+
+        Mutex is necessary for using condition variable
+
+        NOTE:
+        This can be a good use case for Producer/Consumer problems
+
+    */
+
     std::mutex gLock;
     // similar to sync.Cond in Golang
     std::condition_variable gConditionVariable;
