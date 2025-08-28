@@ -23,6 +23,20 @@ void fun() {
 
 int main() {
 
+    /*
+        Mutex and semaphore
+        --> Both are synchronization primitives
+
+        Mutex:
+        --> Single thread in critical section
+        --> locking mechanism
+
+        Semaphore:
+        --> Multiple threads in critical section (counting semaphore)
+        --> signaling mechanism
+
+    */
+
     std::thread t1(&fun);
 
     std::cout << "[main]: sending signal to thread\n";
