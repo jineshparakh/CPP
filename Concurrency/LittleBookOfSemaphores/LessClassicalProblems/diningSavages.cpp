@@ -10,6 +10,7 @@ std::binary_semaphore potEmpty(0);
 
 const int M = 5;
 const int NUM_SAVAGES = 10;
+
 void savageTask(int savageId) {
     while (true) {
         mu.acquire();
@@ -61,4 +62,6 @@ int main() {
     for (int i = 0; i < NUM_SAVAGES; i++) {
         savages[i].join();
     }
+
+    return 0;
 }
